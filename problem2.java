@@ -1,3 +1,4 @@
+//input : 8 1 2 2 0 4 4 0 5 output : 1 4 8 5 0 0 0 0 
 import java.util.Scanner;
 public class Main
 {
