@@ -27,10 +27,6 @@ public class Main
         char arr[] = {'}'};
         for(i=0;i<arr.length;i++)
         {
-            if(arr[i]=='{' || arr[i] == '(' || arr[i] =='[')
-            {
-                push(arr[i],s);
-            }
             if(top == -1 && (arr[i] == '}' || arr[i] == ')' || arr[i] == ']'))
             {
                 System.out.println("False");
@@ -38,6 +34,10 @@ public class Main
             }
             else
             {
+                 if(arr[i]=='{' || arr[i] == '(' || arr[i] =='[')
+                {
+                    push(arr[i],s);
+                }
                 if( arr[i]=='}')
                 {
                     if(arr[top] == '{')
