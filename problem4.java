@@ -1,43 +1,48 @@
 //Not yet completed
 //pattern using numbers
-import java.util.Scanner;
-public class Pattern
+public class Main 
 {
-    public static int N =1,i=3;
-    static void recursionrow(int n)
+    static int top =-1;
+    static void push(char x, char s[])
     {
-        if(n<1)
-        {
-            i=i+N;
-            return;
-        }
-        if(n<=N)
-        {
-            System.out.print(N+" ");
-            N++;
-        }
-        if(i>0)
-        {
-            System.out.print(" ");
-            i--;
-        }
-        recursionrow(n-1);
+        s[top++] = x;
+        return;
     }
-    static void recursion(int n)
+    static void pop()
     {
-        if(n<1)
-        {
-            return;
-        }
-        recursionrow(n);
-        System.out.println("");
-        recursion(n-1);
+        top--;
+        return;
     }
-    public static void main(String args[])
+    public static void main (String[] args) 
     {
-        int n;
-        Scanner in = new Scanner(System.in);
-        n = in.nextInt();
-        recursion(n);
+        int i;
+        char s[] = new char[100];
+        char arr[] = {'{','(','(',')',')','}'};
+        for(i=0;i<arr.length;i++)
+        {
+            if(arr[i]=='{' || arr[i] == '(' || arr[i] =='[')
+            {
+                push(arr[i],s);
+            }
+            else if( arr[i]=='}' || arr[i] == ')' || arr[i] == ']')
+            {
+                if(arr[top] == '{' || arr[top] == '(' || arr[top] == '[')
+                {
+                    pop();
+                }
+            }
+            else
+            {
+                pop();
+            }
+        }
+        if(top==-1)
+        {
+            System.out.print("True");
+        }
+        else
+        {
+            System.out.println("False");
+        }
     }
 }
