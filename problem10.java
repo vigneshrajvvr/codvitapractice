@@ -71,19 +71,43 @@ class stackbraces
                 {
                     if(c == '}')
                     {
-                        if(n2.data == '{')
+                        if(n1.data == '{')
                         {
                             while(head.next.next != null)
+                            {
+                                n1 = n1.next;
+                            }
+                            n1.next = null;
                         }
                     }
-                }
+                    if(c == ')')
+                    {
+                        if(n1.data == '(')
+                        {
+                            while(head.next.next != null)
+                            {
+                                n1 = n1.next;
+                            }
+                            n1.next = null;
+                        }
+                    }
+                    if(c == ']')
+                    {
+                        if(n1.data == '[')
+                        {
+                            while(head.next.next != null)
+                            {
+                                n1 = n1.next;
+                            }
+                            n1.next = null;
+                        }
             }
             compare = comapre.next;
         }
         return count;
     }
 }
-public class Main
+class Main
 {
     public static int count =0;
 	public static void main(String[] args)
@@ -98,5 +122,9 @@ public class Main
 	        s.insert(in.next().charAt(0));
 	    }
 	    s.show();
+	    if(s1.comapare == 0)
+	        System.out.println("True");
+	    else
+	        System.out.println("False");
 	}
 }
