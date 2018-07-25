@@ -1,4 +1,5 @@
 //equivalent braces usign linked list
+//Not yet completed
 import java.util.*;
 class Node
 {
@@ -46,7 +47,7 @@ class stackbraces
         while(compare!=null)
         {
             char c= compare.data;
-            if((c=='}' || c == ')' || c==']') && count == 0)
+            if((c=='}' || c == ')' || c==']') && compare == head)
             {
                 break;
             }
@@ -54,12 +55,32 @@ class stackbraces
             {
                 if(c == '{' || c == '(' || c == ']')
                 {
-                    count++;
+                    if(compare == head)
+                    {
+                        Node n1 = head;
+                    }
+                    else
+                    {
+                        Node n2 = new Node();
+                        n2.data = c;
+                        n2.next = null;
+                        n1.next = n2;
+                    }
+                }
+                else
+                {
+                    if(c == '}')
+                    {
+                        if(n2.data == '{')
+                        {
+                            while(head.next.next != null)
+                        }
+                    }
                 }
             }
             compare = comapre.next;
-            return count;
         }
+        return count;
     }
 }
 public class Main
