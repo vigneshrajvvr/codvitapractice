@@ -37,5 +37,5 @@ public class hourglass
         }
         System.out.println("Maximum hour glass sum : "+max);
     }
-}
+} 
 
