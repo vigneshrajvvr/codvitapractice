@@ -1,5 +1,4 @@
 // Hackerrank Hourglass problem
-//Not yet completed
 public class hourglass
 {
     public static void main(String argsp[])
@@ -13,7 +12,7 @@ public class hourglass
             {
                 for(j=j1;j<j2;j++)
                 {
-                    if((j % 2 == 0) && (i == ((int)(i1+i2)/2)))
+                    if(((j == j2-3) || (j == j2-1)) && (i == ((int)(i1+i2)/2)))
                         continue;
                     else
                         sum = sum + arr[i][j];
